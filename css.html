@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Glow Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #0d0d0d;
+      margin: 0;
+    }
+
+    .neon-button {
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: transparent;
+      border: 0.2rem solid #0ff;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      box-shadow: 0 0 0.5rem #0ff, 0 0 1rem #0ff, 0 0 1.5rem #0ff;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    .neon-button::before {
+      content: '';
+      position: absolute;
+      top: -0.5rem;
+      left: -0.5rem;
+      right: -0.5rem;
+      bottom: -0.5rem;
+      border: 0.2rem solid #0ff;
+      opacity: 0.6;
+      filter: blur(1rem);
+    }
+
+    .neon-button:hover {
+      color: #0d0d0d;
+      background-color: #0ff;
+      box-shadow: 0 0 1rem #0ff, 0 0 2rem #0ff, 0 0 3rem #0ff;
+    }
+
+    @keyframes pulse {
+      from {
+        box-shadow: 0 0 0.5rem #0ff, 0 0 1rem #0ff, 0 0 1.5rem #0ff;
+      }
+      to {
+        box-shadow: 0 0 1rem #0ff, 0 0 2rem #0ff, 0 0 3rem #0ff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="neon-button">Click Me</button>
+</body>
+</html>
